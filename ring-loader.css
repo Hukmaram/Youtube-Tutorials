@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f5f5f5;
+}
+
+.loader-container {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    perspective: 1000px; /* Gives depth to the 3D effect */
+}
+
+.ring {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    border: 10px solid transparent;
+    border-top: 10px solid #3498db;
+    border-radius: 50%;
+    animation: rotate 2s linear infinite;
+}
+
+.ring1 {
+    transform: rotateX(35deg) rotateY(0deg); /* First ring */
+}
+
+.ring2 {
+    transform: rotateX(55deg) rotateY(45deg); /* Second ring with a different angle */
+    animation-duration: 3s; /* Slower animation */
+    border-top-color: #e74c3c; /* Different color */
+}
+
+.ring3 {
+    transform: rotateX(75deg) rotateY(90deg); /* Third ring with another angle */
+    animation-duration: 4s; /* Even slower animation */
+    border-top-color: #f1c40f; /* Different color */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

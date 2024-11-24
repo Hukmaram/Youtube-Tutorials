@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    background: black;
+    display: flex;
+    overflow: hidden;
+  }
+
+  .blackhole {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,0,0,1) 10%, rgba(0,0,0,0) 50%);
+    box-shadow: 0 0 50px 30px rgba(0, 0, 0, 0.8);
+    animation: swirl 10s infinite linear;
+  }
+
+  .star {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: rgb(219, 230, 10);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: orbit 5s infinite linear;
+    box-shadow: 0 0 20px rgba(228, 239, 7, 0.921);
+  }
+
+  /* Tail effect for the star */
+  .star::before {
+    content: '';
+    position: absolute;
+    width: 80px;
+    height: 5px;
+    background: rgba(235, 143, 4, 0.87);
+    top: 50%;
+    left: -60px;
+    transform: rotate(30deg);
+    border-radius: 50%;
+    filter: blur(4px);
+  }
+
+
+  /* Tail effect */
+  .tail {
+    position: absolute;
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, rgba(241, 241, 238, 0.904), transparent);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: spinTail 5s infinite linear;
+    filter: blur(20px);
+  }
+
+  @keyframes swirl {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg) translateX(150px) translateY(0) translate(-50%, -50%);
+    }
+    100% {
+      transform: rotate(360deg) translateX(150px) translateY(0) translate(-50%, -50%);
+    }
+  }
+
+  @keyframes spinTail {
+    0% {
+      transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+      transform: translate(-50%, -50%) rotate(360deg);
+    }
+  }

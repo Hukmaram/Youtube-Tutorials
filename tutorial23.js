@@ -1,0 +1,4 @@
+let a = 1;
+let b = ++a;
+console.log("a", a);
+console.log("b", b);

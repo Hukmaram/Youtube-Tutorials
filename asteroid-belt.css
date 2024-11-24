@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .belt-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+  }
+
+  .center-star {
+    width: 40px;
+    height: 40px;
+    background-color: yellow;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 30px rgba(255, 255, 0, 0.8);
+  }
+
+  .asteroid-belt {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    animation: rotateBelt 60s linear infinite;
+    pointer-events: none;
+  }
+
+  .asteroid {
+    width: 6px;
+    height: 6px;
+    background-color: grey;
+    border-radius: 50%;
+    position: absolute;
+    box-shadow: 0 0 5px white;
+  }
+
+  /* Asteroids placed at different positions along the belt */
+  .asteroid:nth-child(1) {
+    top: 20%;
+    left: 50%;
+    animation: orbit1 15s linear infinite;
+  }
+
+  .asteroid:nth-child(2) {
+    top: 30%;
+    left: 75%;
+    animation: orbit2 18s linear infinite;
+  }
+
+  .asteroid:nth-child(3) {
+    top: 60%;
+    left: 20%;
+    animation: orbit3 22s linear infinite;
+  }
+
+  .asteroid:nth-child(4) {
+    top: 70%;
+    left: 55%;
+    animation: orbit4 25s linear infinite;
+  }
+
+  .asteroid:nth-child(5) {
+    top: 80%;
+    left: 40%;
+    animation: orbit5 30s linear infinite;
+  }
+
+  @keyframes rotateBelt {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes orbit1 {
+    0% {
+      transform: rotate(0deg) translateX(60px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(60px) rotate(-360deg);
+    }
+  }
+
+  @keyframes orbit2 {
+    0% {
+      transform: rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    }
+  }
+
+  @keyframes orbit3 {
+    0% {
+      transform: rotate(0deg) translateX(140px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(140px) rotate(-360deg);
+    }
+  }
+
+  @keyframes orbit4 {
+    0% {
+      transform: rotate(0deg) translateX(180px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(180px) rotate(-360deg);
+    }
+  }
+
+  @keyframes orbit5 {
+    0% {
+      transform: rotate(0deg) translateX(220px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(220px) rotate(-360deg);
+    }
+  }
+  

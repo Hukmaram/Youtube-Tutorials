@@ -1,0 +1,60 @@
+body {
+  margin: 0;
+  background-color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.orbit-container {
+  position: relative;
+  width: 300px;
+  height: 300px;
+}
+
+.planet {
+  width: 100px;
+  height: 100px;
+  background-color: blue;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 20px rgba(0, 0, 255, 0.5);
+}
+
+.orbit-path {
+  position: absolute;
+  width: 250px;
+  height: 250px;
+  border: 1px dashed rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.satellite {
+  width: 20px;
+  height: 20px;
+  background-color: grey;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform-origin: 125px 125px; /* Center of the orbit */
+  transform: translateX(125px); /* Start at the right edge */
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+  animation: orbit 8s linear infinite;
+}
+
+@keyframes orbit {
+  0% {
+    transform: rotate(0deg) translateX(125px) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(125px) rotate(-360deg);
+  }
+}

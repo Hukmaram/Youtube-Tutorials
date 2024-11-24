@@ -1,0 +1,153 @@
+<!DOCTYPE html html lang="en">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awesome Card Flip Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            font-family: Arial, sans-serif;
+        }
+
+        .card-container {
+            perspective: 1000px;
+            width: 300px;
+            height: 400px;
+        }
+
+        .card {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+        }
+
+        .card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+        .card-front {
+            background: linear-gradient(45deg, #3498db, #8e44ad);
+            color: white;
+        }
+        .card {
+            transition: transform 0.8s cubic-bezier(0.4, 0.0, 0.2, 1);
+        }
+
+        .card-face {
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .card:hover .card-front {
+            opacity: 0;
+        }
+
+        .card:hover .card-back {
+            opacity: 1;
+        }
+
+        .card-back {
+            opacity: 0;
+        }
+
+
+        .card-back {
+            background: linear-gradient(45deg, #2ecc71, #27ae60);
+            color: white;
+            transform: rotateY(180deg);
+            backface-visibility: visible;
+            z-index: 1;
+        }
+
+        .card-content {
+            text-align: center;
+            padding: 20px;
+        }
+
+        .rotate-content {
+            transform: rotateY(180deg);
+        }
+
+        
+        @keyframes pulse {
+
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        .card:hover .card-face {
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0; }
+            50% { opacity: 1; }
+        }
+
+        .sparkle {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: white;
+            border-radius: 50%;
+            opacity: 0;
+            
+        }
+
+        .card:hover .sparkle {
+            animation: sparkle 0.8s infinite;
+        }
+
+        .sparkle:nth-child(1) { top: 10%; left: 20%; animation-delay: 0.1s; }
+        .sparkle:nth-child(2) { top: 30%; right: 10%; animation-delay: 0.3s; }
+        .sparkle:nth-child(3) { bottom: 15%; left: 15%; animation-delay: 0.5s; }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <div class="card-face card-front">
+                <div class="card-content">
+                    <h2>Front Side</h2>
+                    <p>Hover to flip!</p>
+                </div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+            </div>
+            <div class="card-face card-back">
+                <div class="card-content rotate-content">
+                    <h2>Back Side</h2>
+                    <p>Awesome flip effect!</p>
+                </div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+                <div class="sparkle"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #1a1a1a;
+}
+  .loader {
+    background-color: #1a1a1a;
+    color: #e4dfe3;
+    font-family: "Courier New", Courier, monospace;
+    font-size: 1em;
+    margin: 100px auto;
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+  }
+  
+  .text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 0.2em solid #e4dfe3;
+    animation: typewriter 4s steps(11) infinite,
+    cursorBlink 0.5s step-end infinite alternate;
+    margin-top: 1.5em;
+  }
+
+  @keyframes cursorBlink {
+    50% {
+      border-right-color: transparent;
+    }
+  }
+  
+  @keyframes typewriter {
+    0%,
+    10% {
+      width: 0;
+    }
+    45%,
+    55% {
+      width: 6.2em;
+    } 
+    90%,
+    100% {
+      width: 0;
+    }
+  }
+  
+  
