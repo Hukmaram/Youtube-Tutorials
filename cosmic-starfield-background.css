@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+  background-color: black;
+  overflow: hidden;
+}
+
+.starfield {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+  overflow: hidden;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  opacity: 0.8;
+  border-radius: 50%;
+  animation: twinkle 4s infinite, fall linear 10s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.4; }
+}
+
+@keyframes fall {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  100% {
+    transform: translateY(200vh) translateX(-50vw);
+  }
+}

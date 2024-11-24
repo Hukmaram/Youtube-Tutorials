@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    background: black;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .ufo {
+    position: relative;
+    width: 120px;
+    height: 60px;
+    background-color: rgb(15, 218, 208);
+    border-radius: 50% 50% 0 0;
+    animation: hover 2s ease-in-out infinite;
+  }
+
+  .ufo::before {
+    content: '';
+    position: absolute;
+    width: 60px;
+    height: 20px;
+    background-color: rgb(246, 8, 8);
+    border-radius: 50%;
+    bottom: 10px;
+    left: 30px;
+  }
+
+  .beam {
+    position: absolute;
+    width: 20px;
+    height: 200px;
+    background: #eccd1be7;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: beamFlicker 1.5s infinite;
+  }
+
+  @keyframes hover {
+    0%   { transform: translateY(0); }
+    50%  { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+  }
+
+  @keyframes beamFlicker {
+    0%, 100% { opacity: 0.1; }
+    50%      { opacity: 0.5; }
+  }

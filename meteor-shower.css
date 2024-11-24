@@ -1,0 +1,130 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background: black;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .meteor {
+    position: absolute;
+    width: 2px;
+    height: 80px;
+    top: -80px;
+    opacity: 0.8;
+    transform: rotate(45deg);
+    animation: fall linear infinite;
+  }
+
+  .meteor:nth-child(1) {
+    left: 20%;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    background-color: #FF5733;
+  }
+
+  .meteor:nth-child(2) {
+    left: 20%;
+    animation-duration: 1s;
+    animation-delay: 0.1s;
+    background-color: #33FF57;
+  }
+
+  .meteor:nth-child(3) {
+    left: 20%;
+    animation-duration: 1s;
+    animation-delay: 0.2s;
+    background-color: #3357FF;
+  }
+
+  .meteor:nth-child(4) {
+    left: 20%;
+    animation-duration: 1s;
+    animation-delay: 0.3s;
+    background-color: #FF33A1;
+  }
+  .meteor:nth-child(5) {
+    left: 20%;
+    animation-duration: 1s;
+    animation-delay: 0.4s;
+    background-color: #A133FF;
+  }
+  .meteor:nth-child(6) {
+    left: 20%;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    background-color: #33FFF5;
+  }
+  .meteor:nth-child(7) {
+    left: 20%;
+    animation-duration: 1s;
+    animation-delay: 0.6s;
+    background-color: #FFC300;
+  }
+  .meteor:nth-child(8) {
+    left: 20%;
+    animation-duration: 1s;
+    animation-delay: 0.7s;
+    background-color: #DAF7A6;
+  }
+  .meteor:nth-child(9) {
+    left: 20%;
+    animation-duration: 1s;
+    animation-delay: 0.8s;
+    background-color: #581845;
+  }
+  .meteor:nth-child(10) {
+    left: 20%;
+    animation-duration: 1s;
+    animation-delay: 0.9s;
+    background-color: #900C3F;
+  }
+  .meteor:nth-child(11) {
+    left: 20%;
+    animation-duration: 1s;
+    animation-delay: 0.10s;
+    background-color: #FF6F61;
+  }
+  .meteor:nth-child(12) {
+    left: 20%;
+    animation-duration: 1s;
+    animation-delay: 0.11s;
+    background-color: #1ABC9C;
+  }
+  .meteor:nth-child(13) {
+    left: 20%;
+    animation-duration: 1s;
+    animation-delay: 0.12s;
+    background-color: #3498DB;
+  }
+  .meteor:nth-child(14) {
+    left: 20%;
+    animation-duration: 1s;
+    animation-delay: 0.13s;
+    background-color: #E74C3C;
+  }
+  .meteor:nth-child(15) {
+    left: 20%;
+    animation-duration: 1s;
+    animation-delay: 0.14s;
+    background-color: #F1C40F;
+  }
+  .meteor:nth-child(16) {
+    left: 20%;
+    animation-duration: 1s;
+    animation-delay: 0.15s;
+    background-color: #8E44AD;
+  }
+
+  @keyframes fall {
+    0% {
+      top: -100px;
+      opacity: 0.8;
+      left:-50px
+    }
+    100% {
+      top: 110vh;
+      left: 110vw;
+      opacity: 0;
+    }
+  }
